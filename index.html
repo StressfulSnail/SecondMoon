@@ -21,8 +21,15 @@ tw-story {
   background-image: url(./ground.png);
 }
 
-tw-passage, [tags^=meta] tw-link {
+tw-passage, [tags^=meta] tw-link, input[type="text"] {
   font-family: 'VT323', monospace;
+}
+
+input[type="text"] {
+    font-size: large;
+    background-color: rgba(51, 51, 51, 0.5);
+    color: white;
+    border: none;
 }
 
 [tags^=meta], .meta {
@@ -46,7 +53,11 @@ img[src*=mad] {
 
 .visited {
   color: none !important;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="title" tags="title" position="18,22" size="100,100">&lt;h1&gt;SECOND MOON&lt;/h1&gt;
+}
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// hack to let me set variables via JavaScript
+if (!window.harlowe){
+	window.harlowe = { State: State };
+}</script><tw-passagedata pid="1" name="title" tags="title" position="18,22" size="100,100">&lt;h1&gt;SECOND MOON&lt;/h1&gt;
 &lt;p&gt;a text based
 platformer adventure&lt;/p&gt;
 
@@ -65,16 +76,16 @@ You open the bay doors and assist the scientists in setting up a temporary camp.
 Preliminary readings indicate that the atmosphere has less than 0.1% oxygen.
 &lt;/span&gt;
 
-[[Continue|oxygen]]</tw-passagedata><tw-passagedata pid="5" name="oxygen" tags="meta" position="405,602" size="100,100">You are introduced to the oxygen level mechanics, your spacesuit generates oxygen while you are resting but depletes as you move around breathing heavily.
+[[Continue|oxygen]]</tw-passagedata><tw-passagedata pid="5" name="oxygen" tags="meta" position="415,545" size="100,100">You are introduced to the oxygen level mechanics, your spacesuit generates oxygen while you are resting but depletes as you move around breathing heavily.
 
 You are impressed at how well this mechanic is implemented.
 
-[[Continue|axela welcome]]</tw-passagedata><tw-passagedata pid="6" name="axela welcome" tags="dialog" position="194,718" size="100,100">&lt;span class=&quot;name&quot;&gt;Axela&lt;/span&gt;
+[[Continue|axela intro]]</tw-passagedata><tw-passagedata pid="6" name="axela welcome" tags="dialog" position="181,751" size="100,100">&lt;span class=&quot;name&quot;&gt;Axela&lt;/span&gt;
 &lt;span class=&quot;speech&quot;&gt;
 Frosk, I am having a difficult time computing the next best course of action. We have no previous missions similar to this in our logs. May I suggest scouting out the area?
 &lt;/span&gt;
 
-[[Continue|hill]]</tw-passagedata><tw-passagedata pid="7" name="hill" tags="default" position="11,874" size="100,100">You start to explore the area, it is pretty uneventful.
+[[Continue|hill]]</tw-passagedata><tw-passagedata pid="7" name="hill" tags="default" position="11,917" size="100,100">You start to explore the area, it is pretty uneventful.
 
 Until you come across a hill face that you cannot walk over.
 
@@ -87,16 +98,16 @@ Until you come across a hill face that you cannot walk over.
 
 &lt;span class=&quot;meta&quot;&gt;Wow you’re good at this game!&lt;/span&gt;
 
-[[Continue|cave ent]]</tw-passagedata><tw-passagedata pid="11" name="jump fail" tags="" position="748,1129" size="100,100">You stand staring at the hill until you pass out from dehydration.
+[[Continue|cave ent]]</tw-passagedata><tw-passagedata pid="11" name="jump fail" tags="" position="799,1133" size="100,100">You stand staring at the hill until you pass out from dehydration.
 
 The scientists didn’t even bother to come looking for you.
 
-[[Continue|fail]]</tw-passagedata><tw-passagedata pid="12" name="fail" tags="fail" position="713,35" size="100,100">You FAILED!
+[[Continue|fail1]]</tw-passagedata><tw-passagedata pid="12" name="fail3" tags="fail" position="1095,4199" size="100,100">You FAILED!
 
-[[Try Again|title]]
-[[Give Up|give up]]</tw-passagedata><tw-passagedata pid="13" name="give up" tags="fail" position="372,110" size="100,100">Never give up on your dreams...
+[[Try Again|baby intro]]
+[[Give Up|give up]]</tw-passagedata><tw-passagedata pid="13" name="give up" tags="fail" position="1028,235" size="100,100">What? You hate my game or something? Wow I&#39;m so hurt.
 
-[[Try Again|title]]</tw-passagedata><tw-passagedata pid="14" name="cave ent" tags="" position="6,1497" size="100,100">You find an entrance to a cave, this might be a good place for you to set up a permanent camp.
+[[Try Again|title]]</tw-passagedata><tw-passagedata pid="14" name="cave ent" tags="" position="6,1498" size="100,100">You find an entrance to a cave, this might be a good place for you to set up a permanent camp.
 
 You enter the cave.
 
@@ -147,7 +158,7 @@ You wipe off the green sludge that landed on your face and continue your journey
 
 [[Continue|cave adventures]]</tw-passagedata><tw-passagedata pid="26" name="death by alien" tags="" position="844,3000" size="100,100">The blob overpowers you and consumes you whole. You die shortly after.
 
-[[Continue|fail]]</tw-passagedata><tw-passagedata pid="27" name="cave adventures" tags="meta" position="200,3405" size="100,100">You continue playing, as you navigate the well designed, ornate cave levels you encounter more alien blobs that you defeat.
+[[Continue|fail2]]</tw-passagedata><tw-passagedata pid="27" name="cave adventures" tags="meta" position="200,3405" size="100,100">You continue playing, as you navigate the well designed, ornate cave levels you encounter more alien blobs that you defeat.
 
 You are really enjoying the game!
 
@@ -165,7 +176,7 @@ What do you do?
 [[Pick up the rock]]
 </tw-passagedata><tw-passagedata pid="30" name="Shoot the rock" tags="" position="436,3898" size="100,100">You shoot the rock, it shatters into rock dust.
 
-[[Continue|baby intro]]</tw-passagedata><tw-passagedata pid="31" name="Observe the rock from a safe distance" tags="" position="549,4109" size="100,100">You watch the rock with anticipation, it continues to move slightly. Then, suddenly, something pops up from behind the rock.
+[[Continue|baby intro]]</tw-passagedata><tw-passagedata pid="31" name="Observe the rock from a safe distance" tags="" position="543,4173" size="100,100">You watch the rock with anticipation, it continues to move slightly. Then, suddenly, something pops up from behind the rock.
 
 [[Continue|baby intro]] </tw-passagedata><tw-passagedata pid="32" name="Pick up the rock" tags="" position="741,4011" size="100,100">You approach the rock carefully, with steady hands you pick up the trembling rock.
 
@@ -173,57 +184,74 @@ What do you do?
 
 [[Continue|baby choice]]
 
-&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="34" name="baby choice" tags="choice" position="579,4373" size="100,100">You look into the the little blob’s eyes, it looks scared. What do you do?
+&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="34" name="baby choice" tags="choice" position="465,4506" size="100,100">You look into the the little blob’s eyes, it looks scared. What do you do?
 
 [[Murder it’s face]]
 [[Approach it as if it was a scared puppy]]
 
-&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="35" name="Murder it’s face" tags="" position="792,4271" size="100,100">You shoot the poor, innocent, little blob. It dies with a sad squeak.
+&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="35" name="Murder it’s face" tags="" position="785,4484" size="100,100">You shoot the poor, innocent, little blob. It dies with a sad squeak.
 
 Axela logs the incident and reports it to the USSF Military Police.
 
 You go on to fowl the alien’s attack on Earth, and are praised for it, but for the rest of your lonely life you look back on this decision with great remorse.
 
-[[Continue|fail]]
-</tw-passagedata><tw-passagedata pid="36" name="Approach it as if it was a scared puppy" tags="" position="75,4518" size="100,100">You reach your hand out and slowly move towards the little blob. It starts to back up so you stop. 
+[[Continue|fail3]]
+</tw-passagedata><tw-passagedata pid="36" name="sudden sound" tags="" position="74,4710" size="100,100">Suddenly, there is a crashing sound as one of the nearby machinery starts up. $name is startled by the crash and runs to hide behind your feet.
 
-The blob hesitantly wanders up to your hand.
-
-[[Continue|sudden sound]]
-
-&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="37" name="sudden sound" tags="" position="74,4710" size="100,100">Suddenly, there is a crashing sound as one of the nearby machinery starts up. The little blob is startled by the crash and runs to hide behind your feet.
-
-You feel bad for the little alien blob, so you pick it up and put it on your shoulder. You continue searching for answers. 
+You feel bad for $name, so you pick it up and put it on your shoulder. You continue searching for answers. 
 
 [[Contine|fruit]]
-&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="38" name="fruit" tags="" position="74,4907" size="100,100">You pass by a plant growing from the ceiling of the cave. It looks like an upside down tree. There are purple fruit-like orbs growing on it.
+&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="37" name="fruit" tags="" position="74,4907" size="100,100">You pass by a plant growing from the ceiling of the cave. It looks like an upside down tree. There are purple fruit-like orbs growing on it.
 
-You look to the alien blob, it is eyeing the tree...
+You look to $name, it is eyeing the tree...
 
-[[Continue|hungray]]</tw-passagedata><tw-passagedata pid="39" name="end" tags="meta" position="1333,4799.5" size="100,100">Wow! You made it really far! Sadly this is the end of the slice, but think of it this way: you kinda won I guess!
+[[Continue|hungray]]</tw-passagedata><tw-passagedata pid="38" name="end" tags="meta" position="1333,4799" size="100,100">Wow! You made it really far! Sadly this is the end of the slice, but think of it this way: you kinda won I guess!
 
-[[Play Again|title]]</tw-passagedata><tw-passagedata pid="40" name="hungray" tags="dialog" position="296,5010" size="100,100">&lt;span class=&quot;name&quot;&gt;Tiny Blob&lt;/span&gt;
+[[Play Again|title]]</tw-passagedata><tw-passagedata pid="39" name="hungray" tags="dialog" position="284,5039" size="100,100">&lt;span class=&quot;name&quot;&gt;$name&lt;/span&gt;
 &lt;span class=&quot;speech&quot;&gt;
 SQUEEK!
 &lt;/span&gt;
 
 [[Continue|help eat]]
-&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="41" name="help eat" tags="" position="75,5181" size="100,100">The little blob starts to move eagerly. You grab it and lift it up to the tree.
+&lt;img src=&quot;./alien-child.png&quot;/&gt;</tw-passagedata><tw-passagedata pid="40" name="help eat" tags="" position="75,5181" size="100,100">$name starts to move eagerly. You grab it and lift it up to the tree.
 
-The alien munches on some of the fruit from the tree.
+$name munches on some of the fruit from the tree.
 
 [[Continue|more explore with baby]]
-&lt;img src=&quot;./alien-child&quot;/&gt;</tw-passagedata><tw-passagedata pid="42" name="more explore with baby" tags="" position="75,5371" size="100,100">You continue investigating now that the little alien’s stomach is filled. Suddenly, a siren goes off. You are not sure where it is coming from.
+&lt;img src=&quot;./alien-child&quot;/&gt;</tw-passagedata><tw-passagedata pid="41" name="more explore with baby" tags="" position="75,5371" size="100,100">You continue investigating now that the $name’s stomach is filled. Suddenly, a siren goes off. You are not sure where it is coming from.
 
-The small alien jumps off your shoulder and grabs your legs. You trip and fall.
+$name jumps off your shoulder and grabs your legs. You trip and fall.
 
 Lasers fill the room, just barely missing you on the ground.
 
-[[Continue|thank alien]]</tw-passagedata><tw-passagedata pid="43" name="thank alien" tags="" position="73,5551" size="100,100">After a minute or so, the lasers are turned off. You take a moment to figure out what just happened.
+[[Continue|thank alien]]</tw-passagedata><tw-passagedata pid="42" name="thank alien" tags="" position="73,5551" size="100,100">After a minute or so, the lasers are turned off. You take a moment to figure out what just happened.
 
-You thank the alien by feeding it another fruit you stashed away from the tree.
+You thank $name by feeding it another fruit you stashed away from the tree.
 
-[[Continue|end]]</tw-passagedata></tw-storydata>
+[[Continue|end]]</tw-passagedata><tw-passagedata pid="43" name="fail1" tags="fail" position="750,961" size="100,100">You FAILED!
+
+[[Try Again|jump intro]]
+[[Give Up|give up]]</tw-passagedata><tw-passagedata pid="44" name="fail2" tags="fail" position="1125,2877" size="100,100">You FAILED!
+
+[[Try Again|gun intro]]
+[[Give Up|give up]]</tw-passagedata><tw-passagedata pid="45" name="Approach it as if it was a scared puppy" tags="" position="356,4695" size="100,100">You reach your hand out and slowly move towards the little blob. It starts to back up so you stop. 
+
+The blob hesitantly wanders up to your hand.
+
+You decide to name the blob: &lt;input id=&quot;name&quot; type=&quot;text&quot; /&gt;
+
+[[Continue|sudden sound]]
+
+&lt;img src=&quot;./alien-child.png&quot;/&gt;
+
+&lt;script&gt;
+	var input = document.getElementById(&#39;name&#39;);
+	input.addEventListener(&#39;change&#39;, function () {
+		harlowe.State.variables.name = this.value;
+	});
+&lt;/script&gt;</tw-passagedata><tw-passagedata pid="46" name="axela intro" tags="meta" position="416,746" size="100,100">Axela, your personalized AI assistant, appears on your screen&#39;s HUD.
+
+[[Continue|axela welcome]]</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
